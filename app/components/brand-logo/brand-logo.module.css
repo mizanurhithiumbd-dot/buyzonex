@@ -1,0 +1,67 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.iconWrap {
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-accent-9), var(--color-accent-11));
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  position: relative;
+  overflow: hidden;
+}
+
+.iconWrap::after {
+  content: "";
+  position: absolute;
+  inset: -50%;
+  background: linear-gradient(120deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0));
+  transform: rotate(25deg) translateX(-55%);
+  animation: shimmer 3.6s ease-in-out infinite;
+}
+
+.iconImg {
+  width: 22px;
+  height: 22px;
+  position: relative;
+  z-index: 1;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.18));
+}
+
+.text {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.compact .text {
+  display: none;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: rotate(25deg) translateX(-65%);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.65;
+  }
+  50% {
+    transform: rotate(25deg) translateX(65%);
+    opacity: 0.75;
+  }
+  70% {
+    opacity: 0.2;
+  }
+  100% {
+    transform: rotate(25deg) translateX(65%);
+    opacity: 0;
+  }
+}
